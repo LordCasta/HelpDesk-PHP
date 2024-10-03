@@ -51,15 +51,30 @@
 				<form method="post" id="ticket_form">
 					<div class="col-lg-6">
 						<fieldset class="form-group">
+							<label class="form-label semibold" for="tick_titulo">Titulo</label>
+							<input type="text" class="form-control" id="tick_titulo" name="tick_titulo" readonly>
+						</fieldset>
+					</div>
+
+
+					<div class="col-lg-4">
+						<fieldset class="form-group">
 							<label class="form-label semibold" for="cat_nom">Categoria</label>
 							<input type="text" class="form-control" id="cat_nom" name="cat_nom" readonly>
 						</fieldset>
 					</div>
 
-					<div class="col-lg-6">
+					<div class="col-lg-4">
 						<fieldset class="form-group">
-							<label class="form-label semibold" for="tick_titulo">Titulo</label>
-							<input type="text" class="form-control" id="tick_titulo" name="tick_titulo" readonly>
+							<label class="form-label semibold" for="cat_nom">SubCategoria</label>
+							<input type="text" class="form-control" id="cats_nom" name="cats_nom" readonly>
+						</fieldset>
+					</div>
+
+					<div class="col-lg-4">
+						<fieldset class="form-group">
+							<label class="form-label semibold" for="prio_nom">Prioridad</label>
+							<input type="text" class="form-control" id="prio_nom" name="prio_nom" readonly>
 						</fieldset>
 					</div>
 
@@ -80,6 +95,9 @@
 						</fieldset>
 					</div>
 
+				
+
+
 					<div class="col-lg-12">
 						<fieldset class="form-group">
 							<label class="form-label semibold" for="tickd_descripusu">Descripción</label>
@@ -88,6 +106,9 @@
 								</div>
 						</fieldset>
 					</div>
+
+					
+					
 				</form>	
 			</div>
 		</div>	
@@ -110,6 +131,13 @@
 
 						<input type="hidden" id="usu_id" name="usu_id" value="<?php echo $_SESSION["usu_id"] ?>">
 
+						<!-- TODO: Agregar archivos adjuntos -->
+						<div class="col-lg-12">
+							<fieldset class="form-group">
+							<label class="form-label semibold" for="fileElem">Documentos Adicionales</label>
+							<input type="file" name="fileElem" id="fileElem" class="form-control" multiple>
+							</fieldset>
+						</div>
 						
 						<div class="col-lg-12">
 							<fieldset class="form-group">
@@ -121,7 +149,7 @@
 						</div>
 						<div class="col-lg-12">
 							<button type="button" id="btnenviar" class="btn btn-rounded btn-inline btn-primary">Enviar</button>
-							<button type="button" id="btncerrarticket" value="add" class="btn btn-rounded btn-inline btn-danger">Cerra Ticket</button>
+							<button type="button" id="btncerrarticket" value="add" class="btn btn-rounded btn-inline btn-danger">Cerrar Ticket</button>
 						</div>
 					</form>
 				</div>
@@ -135,6 +163,7 @@
     <?php require_once("../Mainjs/js.php");?>
 	
 	<script type="text/javascript" src="detalleticket.js"></script>
+	<script type="text/javascript" src="../notificacion.js"></script>
 </body>
 </html>
 <?php 

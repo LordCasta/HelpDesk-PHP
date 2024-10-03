@@ -2,8 +2,9 @@
     <div class="container-fluid">
 
         <a href="#" class="site-logo">
-            <img class="hidden-md-down" src="../../public/img/logo-2.png" alt="">
-            <img class="hidden-lg-up" src="../../public/img/logo-2-mob.png" alt="">
+            <!--<img class="hidden-md-down" src="../../public/img/logo-2.png" alt="">
+            <img class="hidden-lg-up" src="../../public/img/logo-2-mob.png" alt=""> -->
+            <h3>JP-HelDesk</h3>
         </a>
 
         <button id="show-hide-sidebar-toggle" class="show-hide-sidebar">
@@ -17,6 +18,11 @@
         <div class="site-header-content">
             <div class="site-header-content-in">
                 <div class="site-header-shown">
+                    <div class="dropdown dropdown-notification notif">
+                        <a href="../MntNotificacion/" class="header-alarm">
+                            <i class="font-icon-alarm"></i>
+                        </a>
+                    </div>
                     <div class="dropdown user-menu">
                         <button class="dropdown-toggle" id="dd-user-menu" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                              <img src="../../public/<?php echo $_SESSION["rol_id"] ?>.jpg" alt=""> 

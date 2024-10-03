@@ -18,17 +18,36 @@ function guardaryeditar(e){
         processData: false,
         success: function(datos){
             console.log(datos)
-            $('#usuario_form')[0].reset();
-            $('#modalmantenimiento').modal('hide');
-            $('#usuario_data').DataTable().ajax.reload();
+            if(datos == "1"){
+                $('#usuario_form')[0].reset();
+                /* TODO:Ocultar Modal */
+                $("#modalmantenimiento").modal('hide');
+                $('#usuario_data').DataTable().ajax.reload();
 
-            
-            swal({
-                title: "HelpDesk",
-                text: "Completado.",
-                type: "success",
-                confirmButtonClass: "btn-success"
-            });
+                /* TODO:Mensaje de Confirmacion */
+                swal({
+                    title: "HelpDesk!",
+                    text: "Registrado Correctamente.",
+                    type: "success",
+                    confirmButtonClass: "btn-success"
+                });
+            }else if(datos == "2"){
+                $('#usuario_form')[0].reset();
+                /* TODO:Ocultar Modal */
+                $("#modalmantenimiento").modal('hide');
+                $('#usuario_data').DataTable().ajax.reload();
+
+                /* TODO:Mensaje de Confirmacion */
+                swal({
+                    title: "HelpDesk!",
+                    text: "Actualizado Correctamente.",
+                    type: "success",
+                    confirmButtonClass: "btn-success"
+                });
+            }else if(datos=="0"){
+                $("#usu_correo").addClass("form-control-error");
+                $("<small class='text-muted text-danger'>El Registro ya existe</small>").insertAfter("#usu_correo");
+            }
         }
     });
 
@@ -98,6 +117,7 @@ function editar(usu_id){
     $('#mdltitulo').html('Editar Registro');
 
     $.post("../../controller/usuario.php?op=mostrar", { usu_id : usu_id }, function (data){
+        //console.log('data :>> ', data);
         data = JSON.parse(data);
         $('#usu_id').val(data.usu_id);
         $("#usu_nom").val(data.usu_nom);

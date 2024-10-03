@@ -36,6 +36,21 @@ $(document).ready(function(){
             });
         });
 
+        $('#idcalendar').fullCalendar({
+            lang:'es',
+            header:{
+                left: 'prev,next today',
+                center: 'title',
+                right: 'month,basicWeek,basicDay'  
+            },
+            defaultView:'month',
+            events:{
+                url:'../../controller/ticket.php?op=usu_calendar',
+                method:'POST',
+                data:{usu_id:usu_id}
+            }
+        });
+
     }else{
 
         $.post("../../controller/ticket.php?op=total",  function (data){
@@ -65,10 +80,22 @@ $(document).ready(function(){
             });
         }); 
         
+        $('#idcalendar').fullCalendar({
+            lang:'es',
+            header:{
+                left: 'prev,next today',
+                center: 'title',
+                right: 'month,basicWeek,basicDay'  
+            },
+            defaultView:'month',
+            events:{
+                url:'../../controller/ticket.php?op=all_calendar'
+            }
+        });
     }
 
 
-
+   
 
    
     
