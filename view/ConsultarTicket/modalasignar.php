@@ -21,7 +21,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-rounded btn-default" data-dismiss="modal">Cerrar</button>
-                    <button type="submit" name="action" id="#" value="add" class="btn btn-rounded btn-primary">Asignar</button>
+                    <button type="submit" name="action" id="btnguardar" value="add" class="btn btn-rounded btn-primary">Asignar</button>
                 </div>
             </form>
         </div>

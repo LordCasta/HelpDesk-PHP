@@ -41,7 +41,8 @@
 
 			<div class="box-typical box-typical-padding">
 				<p>
-					Desde esta ventana podra generar nuevos tickets de HelpDesk.
+					Desde esta ventana podra generar nuevos tickets de HelpDesk. <br>
+					(*) Datos Obligatorios
 				</p>
 
 				<h5 class="m-t-lg with-border">Ingresar Información</h5>
@@ -53,16 +54,34 @@
 
 						<div class="col-lg-12">
 							<fieldset class="form-group">
-								<label class="form-label semibold" for="tick_titulo">Titulo</label>
-								<input type="text" class="form-control" id="tick_titulo" name="tick_titulo" placeholder="Ingrese Titulo">
+								<label class="form-label semibold" for="tick_titulo">Titulo (*)</label>
+								<input type="text" class="form-control" id="tick_titulo" name="tick_titulo" placeholder="Ingrese Titulo" required>
 							</fieldset>
 						</div>
 
 						<div class="col-lg-6">
 							<fieldset class="form-group">
-								<label class="form-label semibold" for="exampleInput">Categoria</label>
-								<select id="cat_id" name="cat_id" class="form-control">
-									
+								<label class="form-label semibold" for="exampleInput">Categoria (*)</label>
+								<select id="cat_id" name="cat_id" class="form-control select2" data-placeholder="Seleccionar" required>
+									<option label="Seleccionar"></option>
+								</select>
+							</fieldset>
+						</div>
+
+						<div class="col-lg-6">
+							<fieldset class="form-group">
+								<label class="form-label semibold" for="exampleInput">SubCategoria (*)</label>
+								<select id="cats_id" name="cats_id" class="form-control select2" data-placeholder="Seleccionar" required>
+									<option label="Seleccionar"></option>
+								</select>
+							</fieldset>
+						</div>
+
+						<div class="col-lg-6">
+							<fieldset class="form-group">
+								<label class="form-label semibold" for="exampleInput">Prioridad (*)</label>
+								<select id="prio_id" name="prio_id" class="form-control" data-placeholder="Seleccionar" required>
+									<option label="Seleccionar"></option>
 								</select>
 							</fieldset>
 						</div>
@@ -76,14 +95,20 @@
 						
 						<div class="col-lg-12">
 							<fieldset class="form-group">
-								<label class="form-label semibold" for="tick_descrip">Descripción</label>
+								<label class="form-label semibold" for="tick_descrip">Descripción (*)</label>
 								<div class="summernote-theme-1">
-									<textarea id="tick_descrip" name="tick_descrip" class="summernote" name="name"></textarea>
+									<textarea id="tick_descrip" name="tick_descrip" class="summernote" name="name" required></textarea>
 								</div>
 							</fieldset>
+
 						</div>
+
+
 						<div class="col-lg-12">
-							<button type="submit" name="action" value="add" class="btn btn-rounded btn-inline btn-primary">Guardar</button>
+							<button type="submit" id="btnguardar" name="action" value="add" class="btn btn-rounded btn-inline btn-primary">
+								
+								Guardar
+							</button>
 						</div>
 					</form>
 				</div>

@@ -80,19 +80,42 @@
                     ?>
 
                     <div class="form-group">
-                        <input type="text" id="usu_correo" name="usu_correo" class="form-control error"  placeholder="E-Mail" />
+                        <input type="text" id="usu_correo" name="usu_correo" class="form-control error"  placeholder="Correo Electronico" />
                     </div>
                     <div class="form-group">
-                        <input type="password" id="usu_pass" name="usu_pass" class="form-control error" placeholder="Password"/>
+                        <input type="password" id="usu_pass" name="usu_pass" class="form-control error" placeholder="Contraseña"/>
                     </div>
                     <div class="form-group">
                         <div class="float-right reset">
-                            <a href="reset-password.html">Cambiar contraseña</a>
+                            <a href="http://localhost/mesa-de-ayuda/view/ResetPassword/">Recuperar contraseña</a>
                         </div>
                         <div class="float-left reset">
-                            <a href="#" id="btnsoporte">Acceso soporte</a>
+                            <a href="http://localhost/mesa-de-ayuda/view/accesosoporte/" id="btnsoporte">Acceso soporte</a>
                         </div>
                     </div>
+                    
+                    <div class="form-group" style="display: flex; justify-content: center; align-items: center;">
+                            <!--TODO: Botón "Iniciar sesión con Google" con atributos de datos HTML para la API -->
+                            <div id="g_id_onload"
+                            data-client_id="326949501008-7uj47m1udk7l342uvn5r39fu79v5imv7.apps.googleusercontent.com"
+                            data-context="signin"
+                            data-ux_mode="popup"
+                            data-callback="handleCredentialResponse"
+                            data-auto_prompt="false"
+                        >
+                        </div>
+
+                        <!--TODO: Configuración del botón de inicio de sesión con Google -->
+                        <div class="g_id_signin"
+                            data-type="standard"
+                            data-shape="rectangular"
+                            data-theme="outline"
+                            data-text="signin_with"
+                            data-size="large"
+                            data-logo_alignment="left"
+                        ></div>
+                    </div>
+
                     <input type="hidden" name="enviar" class="form-control" value="si">
                     <button type="submit" class="btn btn-rounded">Acceder</button>
                     
@@ -127,6 +150,7 @@
         });
     </script>
 <script src="public/js/app.js"></script>
+<script src="https://accounts.google.com/gsi/client" async></script>
 <script src="index.js"></script>
 </body>
 </html>

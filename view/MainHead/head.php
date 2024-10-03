@@ -30,6 +30,8 @@
 	<link rel="stylesheet" href="../../public/css/lib/bootstrap-sweetalert/sweetalert.css">
 	<link rel="stylesheet" href="../../public/css/separate/vendor/sweet-alert-animations.min.css">
 
+	<link rel="stylesheet" href="../../public/css/separate/vendor/blockui.min.css">
+
 	<link rel="stylesheet" href="../../public/css/separate/vendor/select2.min.css">
 
     <link rel="stylesheet" href="../../public/css/main.css">
