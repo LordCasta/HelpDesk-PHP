@@ -1,0 +1,6 @@
+# Ignorar cambios en Models/Email.php
+Models/Email.php
+
+# Ignorar todo dentro de public/document y public/document_detalle
+public/document/
+public/document_detalle/

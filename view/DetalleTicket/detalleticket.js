@@ -5,12 +5,12 @@ function init(){
 
 $(document).ready(function(){
 
-    const url = window.location.href;
+   const url = window.location.href;
     const params = new URLSearchParams(new URL(url).search);
     const tick_id = params.get("ID");
     const decoded_id = decodeURIComponent(tick_id);
-    const id = decoded_id.replace(/\s/g, '+');
-
+    const id = decoded_id.replace(/\s/g, '+'); 
+    console.log('id :>> ', id);
     
     mostraryvalidar(id);
 
@@ -121,7 +121,6 @@ $(document).ready(function(){
         }
     }).DataTable();
 
-
     $.post("../../controller/categoria.php?op=combo", function(data, status){
         $('#cat_id').html(data);
     });
@@ -146,10 +145,15 @@ $(document).ready(function(){
 $(document).on("click", "#btnenviar", function(){
     const url=window.location.href;
     const params = new URLSearchParams(new URL(url).search);
+    var tick_id = params.get('ID');
     const decoded_id = decodeURIComponent(tick_id);
+    tick_id = decoded_id.replace(/\s/g, '+');
     const id = decoded_id.replace(/\s/g, '+');
 
-    var tick_id = params.get('ID');
+
+    
+    
+   
     var usu_id =  $('#user_idx').val();
     var tickd_descrip =  $('#tickd_descrip').val();
 
@@ -175,9 +179,6 @@ $(document).on("click", "#btnenviar", function(){
             contentType: false,
             processData: false,
             success: function(data){
-                console.log(data);
-
-
 
                 /* TODO: Limpiar inputfile */
                 $('#fileElem').val('');
@@ -238,7 +239,6 @@ $(document).on("click", "#btncerrarticket", function(){
                             type:"POST",
                             data:{tick_id  : id},
                             success: function(datos){
-                                console.log('datos :>> ', datos);
                                 mostraryvalidar(id);
 
                                 swal("Correcto!", "Ticked Cerrado", "success");
@@ -292,11 +292,15 @@ function mostraryvalidar(id){
 
 
 
-    $.post("../../controller/ticket.php?op=listardetalle", { tick_id  : id }, function (data){
-        $('#lbldetalle').html(data);
+    $.post("../../controller/ticket.php?op=listardetalle", { tick_id: id })
+    .done(function(data) {
+        setTimeout(function () {
+            $('#lbldetalle').html(data);
+        }, 50);
     });
 
     $.post("../../controller/ticket.php?op=mostrar", { tick_id  : id }, function (data){
+       
         data = JSON.parse(data);
         $('#lblestado').html(data.tick_estado);
         $('#lblnomusuario').html(data.usu_nom + ' '+data.usu_ape);

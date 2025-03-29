@@ -87,10 +87,10 @@
                     </div>
                     <div class="form-group">
                         <div class="float-right reset">
-                            <a href="http://localhost/mesa-de-ayuda/view/ResetPassword/">Recuperar contraseña</a>
+                            <a href="http://localhost/HelpDesk-PHP/view/ResetPassword/">Recuperar contraseña</a>
                         </div>
                         <div class="float-left reset">
-                            <a href="http://localhost/mesa-de-ayuda/view/accesosoporte/" id="btnsoporte">Acceso soporte</a>
+                            <a href="http://localhost/HelpDesk-PHP/view/accesosoporte/" id="btnsoporte">Acceso soporte</a>
                         </div>
                     </div>
                     

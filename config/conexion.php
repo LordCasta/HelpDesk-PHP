@@ -21,7 +21,7 @@
         }
 
         public function ruta(){
-            return "http://localhost/mesa-de-ayuda";
+            return "http://localhost/HelpDesk-PHP";
         }
 
 

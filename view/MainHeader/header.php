@@ -4,7 +4,7 @@
         <a href="#" class="site-logo">
             <!--<img class="hidden-md-down" src="../../public/img/logo-2.png" alt="">
             <img class="hidden-lg-up" src="../../public/img/logo-2-mob.png" alt=""> -->
-            <h3>JP-HelDesk</h3>
+            <h3>JP-HelpDesk</h3>
         </a>
 
         <button id="show-hide-sidebar-toggle" class="show-hide-sidebar">

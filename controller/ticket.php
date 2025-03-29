@@ -253,6 +253,7 @@
             $descifrado = openssl_decrypt($cifradoSinIV, $cipher, $key, OPENSSL_RAW_DATA, $iv_dec);
 
             $datos = $ticket->listar_ticketdetalle_x_ticket($descifrado);
+
             ?>
                 <?php
                     foreach($datos as $row){
@@ -289,7 +290,7 @@
                                                 <br>
 
                                                 <?php 
-                                                    $datos_det = $documento->get_documento_detalle_x_ticketd($row['tickd_id']);
+                                                    $datos_det = $documento->get_documento_detalle_x_ticketd($row["tickd_id"]);
                                                     if(is_array($datos_det)==true and count($datos_det)> 0){
                                                         ?>
                                                             <p><strong>Documentos adicionales</strong></p>
@@ -415,7 +416,7 @@
         case "insertdetalle":
             $iv_dec = substr(base64_decode($_POST["tick_id"]), 0, openssl_cipher_iv_length($cipher));
             $cifradoSinIV = substr(base64_decode($_POST["tick_id"]), openssl_cipher_iv_length($cipher));
-            $descifrado = openssl_decrypt($cifradoSinIV, $cipher, $key, OPENSSL_RAW_DATA, $iv_dec);
+            $descifrado = openssl_decrypt($cifradoSinIV, $cipher, $key, OPENSSL_RAW_DATA, $iv_dec); 
 
             $datos=$ticket->insert_ticketdetalle($descifrado, $_POST["usu_id"], $_POST["tickd_descrip"]); 
             if(is_array($datos)==true and count($datos)>0){

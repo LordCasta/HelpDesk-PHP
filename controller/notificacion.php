@@ -38,9 +38,9 @@
             foreach($datos as $row){
                 $sub_array = array();
                 $sub_array[] = $row["not_mensaje"] . ' ' . $row["tick_id"];
-
+   
                 $cifrado = openssl_encrypt($row["tick_id"], $cipher, $key, OPENSSL_RAW_DATA, $iv);
-                $textoCifrado = base64_encode($iv . $cifrado);
+                $textoCifrado = base64_encode($iv . $cifrado); 
 
                 $sub_array[] = '<button type="button" data-ciphertext="'.$textoCifrado.'" id="'.$textoCifrado.'" class="btn btn-inline btn-primary btn-sm ladda-button"><i class="fa fa-eye"></i></button>';
                 $data[] = $sub_array;

@@ -28,7 +28,7 @@ function listardetalle(tick_id){
         $('#lblfechcierre').val(data.fech_cierre);
 
         if (data.tick_estado_texto=='Abierto') {
-            window.open('http://localhost/mesa-de-ayuda/','_self');
+            window.open('http://localhost/HelpDesk-PHP/','_self');
         }else{
             if (data.tick_estre==null){
 

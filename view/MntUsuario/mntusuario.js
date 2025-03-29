@@ -117,7 +117,6 @@ function editar(usu_id){
     $('#mdltitulo').html('Editar Registro');
 
     $.post("../../controller/usuario.php?op=mostrar", { usu_id : usu_id }, function (data){
-        //console.log('data :>> ', data);
         data = JSON.parse(data);
         $('#usu_id').val(data.usu_id);
         $("#usu_nom").val(data.usu_nom);
